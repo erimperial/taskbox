@@ -38,6 +38,7 @@
     "@storybook/addon-actions": "^6.1.15",
     "@storybook/addon-essentials": "^6.1.15",
     "@storybook/addon-links": "^6.1.15",
+    "@storybook/addon-storyshots": "^6.1.15",
     "@storybook/angular": "^6.1.15",
     "@testing-library/angular": "^10.3.1",
     "@testing-library/jest-dom": "^5.11.9",
@@ -65,7 +66,7 @@
     "setupFilesAfterEnv": [
       "<rootDir>/src/jest-config/setup.ts"
     ],
-    "transformIgnorePatterns":[
+    "transformIgnorePatterns": [
       "node_modules/(?!@storybook/*)"
     ],
     "testPathIgnorePatterns": [
@@ -99,7 +100,8 @@
     },
     "transform": {
       "^.+\\.(ts|html)$": "ts-jest",
-      "^.+\\.js$": "babel-jest"
+      "^.+\\.js$": "babel-jest",
+      "^.+\\.stories\\.[jt]sx?$": "@storybook/addon-storyshots/injectFileName"
     },
     "moduleFileExtensions": [
       "ts",
